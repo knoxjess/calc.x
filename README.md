@@ -7,7 +7,8 @@ and JavaScript.
 
 ## visual
 
-![CALC.gif](./assets/images/CALC.gif)
+
+<img width="297" alt="Screenshot 2023-06-10 at 3 04 46 PM" src="https://github.com/knoxjess/calc.x/assets/110634800/0eea4877-3b53-4693-bf17-353544b34a01">
 
 
 ## Technologies Used
