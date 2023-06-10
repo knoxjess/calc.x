@@ -160,6 +160,82 @@ else {
          numbers.push(box.innerText)
     }
 }
+// highlight operator button when selected
+function showSelectedOperator(){
+
+var elements = document.getElementsByClassName("operator");
+
+for (var i=0; i<elements.length; i++){
+elements[i].style.backgroundColor  = "#e68a00";
+}
+
+if (operator_value == "+"){
+document.getElementById("plusOp").style.backgroundColor  = "#ffd11a";
+}
+else if (operator_value == "-"){
+document.getElementById("subOp").style.backgroundColor  = "#ffd11a";
+}
+else if (operator_value == "*"){
+document.getElementById("multiOp").style.backgroundColor  = "#ffd11a";
+}
+else if (operator_value == "/"){
+document.getElementById("divOp").style.backgroundColor  = "#ffd11a";
 }
 }
-}
+// function to calculate the result using two number and an operator
+function calculate(num1, num2, operator){
+
+    if (operator === "+"){
+    total = (parseFloat)(num1)+(parseFloat)(num2)
+    }
+    else if (operator === "-"){
+    total = (parseFloat)(num1)-(parseFloat)(num2)
+    }
+    else if (operator === "*"){
+    total = (parseFloat)(num1)*(parseFloat)(num2)
+    }
+    else if (operator === "/"){
+    total = (parseFloat)(num1)/(parseFloat)(num2)
+    }
+    else {
+    if (total == box.innerText){
+        return total
+    }
+    else {
+        return box.innerText
+    }
+    }
+    // if total is not integer, show maximum 12 decimal places
+    if (!Number.isInteger(total)){
+    total = total.toPrecision(12);
+    }
+    return parseFloat(total);
+    }
+    
+    // function to clear box and reset everything
+    function button_clear(){
+    window.location.reload()
+    }
+    
+    function backspace_remove(){
+    
+    box = document.getElementById("box");
+    var elements = document.getElementsByClassName("operator");
+    
+    for (var i=0; i<elements.length; i++){
+    elements[i].style.backgroundColor  = "#e68a00";
+    }
+    
+    var last_num = box.innerText;
+    last_num = last_num.slice(0, -1)
+    
+    box.innerText = last_num
+    
+    // show 0 zero if all characters on screen are removed
+    if (box.innerText.length == 0){
+    box.innerText = 0
+    firstNum = true
+    }
+    
+    }
+    
