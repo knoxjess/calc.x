@@ -9,10 +9,11 @@ A calculator built using  HTML, CSS and JavaScript.
 ## Technologies Used
 
 * Javascript
-* 
-*css
-*
-*html
+
+* css
+
+* html
+
 
 ## Questions
 
