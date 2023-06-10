@@ -239,3 +239,48 @@ function calculate(num1, num2, operator){
     
     }
     
+// function to change the sign of the number currently on screen
+function plus_minus(){
+    box = document.getElementById("box");
+    
+    // if any operator is already pressed
+    if (typeof last_operator != "undefined"){
+    if (numbers.length>0){
+        // if last button pressed is an operator
+        if (operators.includes(last_button)){
+            // if the displayed text is just a negative sign, replace it with a 0
+            if (box.innerText == "-"){
+                box.innerText = 0
+                firstNum = true
+                return
+            }
+            // if the displayed text is not a just a negative sign, replace it with a negative sign
+            else {
+                box.innerText = "-"
+                firstNum = false
+            }
+        }
+        // if last button pressed is not an operator, change its sign
+        else {
+            box.innerText = -box.innerText
+    
+            if (numbers.length==1){
+                numbers[0] = box.innerText
+            }
+            else {
+                numbers[1] = box.innerText
+            }
+        }
+    }
+    return
+    }
+    
+    // if displayed text is 0, replace it with a negative sign
+    if (box.innerText == 0){
+    box.innerText = "-"
+    firstNum = false
+    return
+    }
+    box.innerText = -box.innerText
+    }
+    
