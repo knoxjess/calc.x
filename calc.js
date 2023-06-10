@@ -307,7 +307,7 @@ function power_of(){
     box.innerText = square_num
     numbers.push(square_num)
     }
-    
+
 // function to calculate the percentage of a number
 function calculate_percentage(){
     var elements = document.getElementsByClassName("operator");
@@ -330,6 +330,69 @@ function calculate_percentage(){
     // deselect operator if any selected
     for (var i=0; i<elements.length; i++){
     elements[i].style.backgroundColor  = "#e68a00";
+    }
+    }
+    
+// function to clear last number typed into the display
+function clear_entry(){
+box = document.getElementById("box");
+
+if (numbers.length > 0 && typeof last_operator != "undefined"){
+box.innerText = 0
+var temp = numbers[0]
+numbers = []
+numbers.push(temp)
+firstNum = true;
+}
+}
+
+document.addEventListener('keydown', keyPressed);
+document.addEventListener('keyup', keyReleased);
+
+// function to capture keydown events
+function keyPressed(e) {
+    e.preventDefault()
+    var equal = document.getElementById("equal_sign").value;
+    var dot = document.getElementById("dot").value;
+    
+    if (e.key == "Delete"){
+    button_clear();
+    return;
+    }
+    
+    var isNumber = isFinite(e.key);
+    var enterPress;
+    var dotPress;
+    var commaPress = false;
+    
+    if (e.key == "Enter"){
+    enterPress = equal;
+    }
+    if (e.key == "."){
+    dotPress = dot;
+    }
+    if (e.key == ","){
+    commaPress = true;
+    }
+    
+    if (isNumber || operators.includes(e.key) || e.key == "Enter" || e.key == dotPress || 
+    commaPress || e.key == "Backspace"){
+    if (e.key == "Enter"){
+        button_number(enterPress)
+    }
+    else if (e.key == "Backspace"){
+        document.getElementById("backspace_btn").style.backgroundColor  = "#999999";
+        backspace_remove()
+    }
+    else if (commaPress){
+        button_number(dot)
+    }
+    else {
+        button_number(e.key) 
+    }   
+    }
+    if (e.key) {
+    key_combination[e.code] = e.key;
     }
     }
     
