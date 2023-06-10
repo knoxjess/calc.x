@@ -307,5 +307,29 @@ function power_of(){
     box.innerText = square_num
     numbers.push(square_num)
     }
-
+    
+// function to calculate the percentage of a number
+function calculate_percentage(){
+    var elements = document.getElementsByClassName("operator");
+    box = document.getElementById("box");
+    
+    if (numbers.length > 0 && typeof last_operator != "undefined"){
+    if (last_operator == "+" || last_operator == "-"){
+        box.innerText = numbers*box.innerText/100
+    }
+    else {
+        box.innerText = box.innerText/100
+    }
+    }
+    else {
+    box.innerText = box.innerText/100
+    }
+    numbers = []
+    numbers.push(box.innerText)
+    
+    // deselect operator if any selected
+    for (var i=0; i<elements.length; i++){
+    elements[i].style.backgroundColor  = "#e68a00";
+    }
+    }
     
