@@ -284,3 +284,28 @@ function plus_minus(){
     box.innerText = -box.innerText
     }
     
+    // function to calculate square root of the number currently on screen
+function square_root(){
+    box = document.getElementById("box");
+    var square_num = Math.sqrt(box.innerText)
+    box.innerText = square_num
+    numbers.push(square_num)
+    }
+    
+    // function to calculate the division of 1 with the number currently on screen
+function division_one(){
+    box = document.getElementById("box");
+    var square_num = 1/box.innerText
+    box.innerText = square_num
+    numbers.push(square_num)
+    }
+
+    // function to calculate the power of the number currently on screen
+function power_of(){
+    box = document.getElementById("box");
+    var square_num =Math.pow(box.innerText, 2)
+    box.innerText = square_num
+    numbers.push(square_num)
+    }
+
+    
