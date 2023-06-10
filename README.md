@@ -7,6 +7,7 @@ and JavaScript.
 
 ## visual
 
+![CALC.gif](./assets/images/CALC.gif)
 
 
 ## Technologies Used
