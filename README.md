@@ -1,5 +1,9 @@
 # Calc.x
-A calculator built using  HTML, CSS and JavaScript.
+A calculator 
+using 
+HTML, 
+CSS 
+and JavaScript.
 
 ## visual
 
